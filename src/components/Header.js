@@ -1,6 +1,6 @@
-import lg from '../img/lg-header.png';
-import md from '../img/md-header.png';
-import sm from '../img/sm-header.png';
+let lg = 'https://ach-photos.netlify.app/lg-header.png',
+    md = 'https://ach-photos.netlify.app/md-header.png',
+    sm = 'https://ach-photos.netlify.app/header-sm.png';
 
 const Header = () => {
     return (

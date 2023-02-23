@@ -23,7 +23,6 @@ $boxshadow: 0 14px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-right: auto;
     margin-left: auto;
 }
-
 @mixin flex($width: 100%) {
     width: $width;
     display: flex;
@@ -52,29 +51,6 @@ $cubic: cubic-bezier(0.73, 0.01, 0, 1);
     }
     100% {
         transform: translateY(2px);
-    }
-}
-@keyframes shake {
-    5% {
-        transform: rotate(25deg);
-    }
-    10% {
-        transform: rotate(-25deg);
-    }
-    15% {
-        transform: rotate(15deg);
-    }
-    20% {
-        transform: rotate(-10deg);
-    }
-    25% {
-        transform: rotate(5deg);
-    }
-    30% {
-        transform: rotate(-3deg);
-    }
-    35% {
-        transform: rotate(1deg);
     }
 }
 @keyframes wiggle {
@@ -312,14 +288,6 @@ h5 {
     overflow: hidden;
     display: block !important;
 }
-.shake {
-    display: inline-block;
-    &:hover,
-    &:focus,
-    &:active {
-        animation: shake 5s infinite normal forwards;
-    }
-}
 .wiggle {
     display: inline-block;
     vertical-align: middle;
@@ -458,18 +426,7 @@ ul {
         left: calc(100% + 150px);
     }
 }
-.loaderrr {
-    position: absolute;
-    top: calc(50% - 4em);
-    left: calc(50% - 4em);
-    width: 6em;
-    height: 6em;
-    border: 6px solid rgba(13, 88, 166, 1);
-    border-top: 6px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1.1s infinite linear;
-    transition: opacity 0.3s;
-}
+
 .hide {
     display: none;
 }
@@ -485,11 +442,8 @@ ul {
 .sidenavbar {
     height: auto;
     width: 0;
-    /* initial width is set to 0, slide happens with JS */
     position: fixed;
-    /* keeps sidenavbar in place */
     z-index: 1008;
-    /* makes sidenavbar stay on top */
     top: 150px;
     left: 0;
     border-radius: 0 5px 5px 0;
@@ -631,7 +585,8 @@ ul {
 }
 .column a,
 footer .link,
-.portfolio button.projBtn {
+.portfolio button.projBtn,
+button.link {
     color: rgba(0, 105, 63, 1);
     font-weight: 700;
     text-decoration: none;
@@ -648,6 +603,14 @@ footer .link,
 footer .link:hover,
 .portfolio button.projBtn:hover {
     background-size: 100% 2px, auto;
+}
+button.link {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
 }
 .row {
     flex-direction: row;
@@ -706,6 +669,27 @@ section>h3 {
     }
 }
 /* education and credit */
+.credit-button {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0, 0);
+    font-size: 17px;
+    border: none;
+    margin: 11px auto;
+    color: $darkestBlue;
+    font-weight: 700;
+    text-decoration: none;
+    background: {
+        image: linear-gradient($darkGreen, $darkGreen);
+        size: 0 2px, auto;
+        repeat: no-repeat;
+        position: center bottom;
+    }
+    transition: all .5s ease-out;
+    padding-bottom: 1px;
+    &:hover {
+        background-size: 100% 2px, auto;
+    }
+}
 .education,
 .credit {
     @include margins;
@@ -753,7 +737,7 @@ section>h3 {
     position: fixed;
     z-index: 9100;
     top: 50%;
-    left: 50%;  
+    left: 50%;
     width: 75%;
     max-width: 100%;
     height: 45%;
@@ -1125,12 +1109,12 @@ section>h3 {
         color: $darkestGreen;
         &.projBtn {
             transition: all .5s ease-out;
-                &:hover {
-                    color: $darkestBlue;
-                    background: none;
-                    letter-spacing: 3px;
-                    text-size-adjust: 35px;
-                }
+            &:hover {
+                color: $darkestBlue;
+                background: none;
+                letter-spacing: 3px;
+                text-size-adjust: 35px;
+            }
         }
     }
     .fullproj:nth-last-child(1) {
@@ -1225,7 +1209,7 @@ footer {
         }
     }
     li:focus-within {
-            outline: 1px solid white;
+        outline: 1px solid white;
     }
     .socialIconsContact {
         display: flex;
@@ -1738,17 +1722,18 @@ footer {
             font-size: 1.8rem;
         }
     }
-
     #articles {
         width: 95% !important;
         .articles {
             display: flex;
             flex-direction: row;
+            margin: auto;
             width: 100%;
+            flex-wrap: wrap;
         }
         article {
             width: 30%;
-            margin: 2px auto;
+            margin: 5px auto;
         }
         h3 {
             padding: 0 5px;
@@ -1787,8 +1772,7 @@ footer {
     .about,
     .skills,
     .credit,
-    .education
-        {
+    .education {
         width: 70%;
         max-width: 850px;
     }

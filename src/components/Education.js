@@ -1,26 +1,26 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
 const Education = () => {
-    const ref = useRef()
-    const [onscreen, setonscreen] = useState(false)
+    const ref = useRef();
+    const [onscreen, setonscreen] = useState(false);
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    },[])
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const handleScroll = () => {
         if (ref.current.getBoundingClientRect().top <= window.innerHeight) {
-            setonscreen(true)
+            setonscreen(true);
         }
-    }
+    };
 
     const certs = [
         {
             url: 'https://www.freecodecamp.org/certification/achulslander/responsive-web-design',
-            name: 'Responsive Web Design'   
+            name: 'Responsive Web Design'
         },
         {
             url: 'https://www.freecodecamp.org/certification/achulslander/javascript-algorithms-and-data-structures',
@@ -30,7 +30,7 @@ const Education = () => {
             url: 'https://www.freecodecamp.org/certification/achulslander/front-end-development-libraries',
             name: 'Front End Development Libraries'
         },
-    ]
+    ];
 
     const ux = [
         {
@@ -45,66 +45,65 @@ const Education = () => {
             url: 'https://coursera.org/share/661f7d7ac0a1a3a2d1b0012d91ba7561',
             name: 'Build Wireframes and Low-Fidelity Prototypes'
         }
-    ]
+    ];
     return (
         <section ref={ref} className='education' id='education'>
-                    <h3 className={onscreen ? 'edtitle scroll scrolled' : 'edtitle scroll'}>Education</h3>
-                    <div>
-                        <h4>Degrees</h4>
-                        <ul className='list'>
-                            <li>
-                                Bachelor of Science from Western Illinois
-                                University
-                            </li>
-                            <li>Associate of Arts from Black Hawk College</li>
-                        </ul>
-                        <h4>Certifications</h4>
-                        <ul className='list'>
-                            <li>
-                                <strong>Front End Development</strong>
-                            </li>
-                            {certs.map((cert, i) => (
-                                <li key={i}>
-                                    <a
-                                        href={cert.url}
-                                        target='_blank'
-                                        rel='noopener noreferrer'>
-                                            {cert.name}
-                                        </a>
-                                </li>
-                                ))
-                            }
-                        </ul>
-                        <ul className='list'>
-                            <li><strong>UX Design</strong></li>
-                            {ux.map((cert, i) => (
-                                <li key={i}>
-                                    <a
-                                        href={cert.url}
-                                        target='_blank'
-                                        rel='noopener noreferrer'>
-                                            {cert.name}
-                                        </a>
-                                </li>
-                                ))
-                            }
-                        </ul>
-                        <h4>Currently studying</h4>
-                        <ul className='list'>
-                            <li>
-                                <a
-                                    href='https://www.coursera.org/professional-certificates/google-ux-design'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    >Create High-Fidelity Designs and Prototypes
-                                    in Figma</a
-                                >
-                            </li>
-                            <li>JavaScript and ReactJS</li>
-                        </ul>
+            <h3 className={onscreen ? 'edtitle scroll scrolled' : 'edtitle scroll'}>Education</h3>
+            <div>
+                <h4>Degrees</h4>
+                <ul className='list'>
+                    <li>
+                        Bachelor of Science from Western Illinois
+                        University
+                    </li>
+                    <li>Associate of Arts from Black Hawk College</li>
+                </ul>
+                <h4>Certifications</h4>
+                <ul className='list'>
+                    <li>
+                        <strong>Front End Development</strong>
+                    </li>
+                    {certs.map((cert, i) => (
+                        <li key={i}>
+                            <a
+                                href={cert.url}
+                                target='_blank'
+                                rel='noopener noreferrer'>
+                                {cert.name}
+                            </a>
+                        </li>
+                    ))
+                    }
+                </ul>
+                <ul className='list'>
+                    <li><strong>UX Design</strong></li>
+                    {ux.map((cert, i) => (
+                        <li key={i}>
+                            <a
+                                href={cert.url}
+                                target='_blank'
+                                rel='noopener noreferrer'>
+                                {cert.name}
+                            </a>
+                        </li>
+                    ))
+                    }
+                </ul>
+                <h4>Currently studying</h4>
+                <ul className='list'>
+                    <li>
+                        <a
+                            href='https://www.coursera.org/professional-certificates/google-ux-design'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                        >Create High-Fidelity Designs and Prototypes
+                            in Figma</a>
+                    </li>
+                    <li>JavaScript and ReactJS</li>
+                </ul>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Education;

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const Footer = ({ section }) => {
+const Footer = ({ section, setShowCredit }) => {
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
     useEffect(() => {
@@ -66,7 +66,7 @@ const Footer = ({ section }) => {
                                             aria-hidden='true'
                                             loading='lazy'
                                             className='icon'
-                                            src={`https://achulslander.com/img/${ icon.img }.svg`}
+                                            src={`https://ach-photos.netlify.app/${ icon.img }.svg`}
                                             alt={`${ icon.name } logo`}
                                         />
                                         <span className='visually-hidden'>
@@ -81,12 +81,12 @@ const Footer = ({ section }) => {
                 </div>
                 <form
                     className='contact-form'
-                    action='https://formsubmit.co/8ed5a7110e73492930c002b6921e7c4c'
                     method='POST'
                     id='contactForm'
                     name='contactMe'
                     aria-label='Send AC a message'
                 >
+                    <input type='hidden' name='form-name' value='contactMe' />
                     <div className='col'>
                         <label hidden htmlFor='inputName'>Name</label>
                         <input
@@ -142,22 +142,15 @@ const Footer = ({ section }) => {
                         href='https://www.freeprivacypolicy.com/live/9f85fba1-b648-47e8-9675-18cda2045b75'
                         target='_blank'
                         rel='noopener noreferrer'
-                    >Privacy Policy</a
-                    >{' '}|{' '}
+                    >Privacy Policy</a>{' '}|{' '}
                     <a
                         className='link'
                         href='https://www.freeprivacypolicy.com/live/cb7a0887-a6fd-43d9-83f3-1dd79dc2f54e'
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        Terms & Conditions</a
-                    >{' '}|{' '}
-                    <a
-                        href='https://achulslander.com/credit.html'
-                        rel='noopener noreferrer'
-                        className='link'
-                    >Icon Sources</a
-                    >
+                        Terms & Conditions</a>{' '}|{' '}
+                    <button className='link' onClick={() => setShowCredit(true)}>Icon Sources</button>
                 </p>
             </section>
         </footer>

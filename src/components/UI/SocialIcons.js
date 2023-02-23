@@ -25,23 +25,23 @@ const SocialIcons = () => {
             img: 'github_icon',
             sr: 'External link to AC`s GitHub',
         },
-    ]
+    ];
 
     return (
         <div className='socialIcons' aria-label='social media icons'>
             <ul>
                 {icons.map((icon, i) => (
-                    <li className='tooltip--triangle right' data-tooltip={`${icon.name}`} key={i}>
+                    <li className='tooltip--triangle right' data-tooltip={`${ icon.name }`} key={i}>
                         <span className='hex-shape bob-on-hover'>
                             <a href={icon.url}
-                            rel='noopener noreferrer'
-                            target='_blank'>
+                                rel='noopener noreferrer'
+                                target='_blank'>
                                 <img
                                     aria-hidden='true'
                                     loading='lazy'
                                     className='icon'
-                                    src={`https://achulslander.com/img/${icon.img}.svg`}
-                                    alt={`${icon.name} logo`}
+                                    src={`https://ach-photos.netlify.app/${ icon.img }.svg`}
+                                    alt={`${ icon.name } logo`}
                                 />
                                 <span className='visually-hidden'>
                                     {icon.sr}
@@ -53,7 +53,7 @@ const SocialIcons = () => {
                 ))}
             </ul>
         </div>
-    )
-}
+    );
+};
 
 export default SocialIcons;

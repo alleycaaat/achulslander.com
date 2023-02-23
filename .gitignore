@@ -18,6 +18,17 @@
 .env.test.local
 .env.production.local
 
+/img
+
+.netlify
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+style.css
+style.css.map
+.zip
+credit.html
+style.min.css
+.pdf

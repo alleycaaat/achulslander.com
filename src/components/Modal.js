@@ -1,21 +1,21 @@
-import { useEffect } from 'react'
-import '../style.css'
+import { useEffect } from 'react';
+import '../style.scss';
 const Modal = ({ data, open, closeModal }) => {
-//console.log('modal data:',data)
+
     useEffect(() => {
-        const closeOnEscapeKey = e => e.key === "Escape" ? closeModal() : null;
-            document.body.addEventListener("keydown", closeOnEscapeKey);
+        const closeOnEscapeKey = e => e.key === 'Escape' ? closeModal() : null;
+        document.body.addEventListener('keydown', closeOnEscapeKey);
         return () => {
-             document.body.removeEventListener("keydown", closeOnEscapeKey);
+            document.body.removeEventListener('keydown', closeOnEscapeKey);
         };
     }, [closeModal]);
 
     if (!open) return null;
-    
 
-   const close = () => {
-    closeModal()
-   }
+
+    const close = () => {
+        closeModal();
+    };
     return (
         <div id='modal-overlay'>
             <div
@@ -27,19 +27,19 @@ const Modal = ({ data, open, closeModal }) => {
                     &times;
                 </button>
                 <div className='modalcontent'>
-                    <img className='image' src={`https://achulslander.com${data.img}`} alt={data.alt} />
+                    <img className='image' src={`https://ach-photos.netlify.app/${ data.img }`} alt={data.alt} />
                     <p className='title'>{data.title}</p>
                     <p className='description'>{data.desc}</p>
-                        <a
-                            className='link'
-                            href={data.url}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >See a demo - external link</a>
+                    <a
+                        className='link'
+                        href={data.demo}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >See a demo - external link</a>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Modal;

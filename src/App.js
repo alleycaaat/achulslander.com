@@ -1,18 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 
 import getHashnodePosts from './getHashnodePosts';
-import SocialIcons from "./components/SocialIcons";
-import Nav from "./components/Nav";
-import Main from "./components/Main";
+import SocialIcons from './components/UI/SocialIcons';
+import Nav from './components/UI/Nav';
+import Main from './components/Main';
 import Footer from './components/Footer';
 
 function App() {
+    const isFirstRender = useRef(true);
+
     const [stick, setStick] = useState(false);
-    const [scrolling, setScrolling] = useState();
+    const [showCredit, setShowCredit] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const [scrolling, setScrolling] = useState();
     const [articles, setArticles] = useState([]);
-    const isFirstRender = useRef(true);
     const [section, setSection] = useState();
 
     const FETCH_POSTS = `
@@ -71,6 +73,11 @@ function App() {
         };
     }, []);
 
+    useEffect(() => {
+        if (showCredit) {
+            setSection('credit');
+        }
+    }, [showCredit]);
 
     useEffect(() => {
         document.documentElement.style.setProperty(
@@ -97,9 +104,22 @@ function App() {
     return (
         <div ref={ref} className='container'>
             <SocialIcons />
-            <Nav stick={stick} navClick={navClick} />
-            <Main articles={articles} setIsModalOpen={setIsModalOpen} section={section} />
-            <Footer section={section} />
+            <Nav
+                stick={stick}
+                navClick={navClick}
+                showCredit={showCredit}
+            />
+            <Main
+                articles={articles}
+                setIsModalOpen={setIsModalOpen}
+                section={section}
+                showCredit={showCredit}
+                setShowCredit={setShowCredit}
+            />
+            <Footer
+                section={section}
+                setShowCredit={setShowCredit}
+            />
         </div>
     );
 }

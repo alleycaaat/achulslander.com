@@ -21,10 +21,20 @@ const Skills = () => {
 
     return (
         <section ref={ref} className='skills' id='skills'>
-            <h3>Skills</h3>
+            <h2>Skills</h2>
             <SkillIcons onscreen={onscreen} />
+            <h4>Frameworks | Libraries | Languages | Tools | Technologies</h4>
+            <p className='skills-list'>
+                HTML5 {'\u2022'} CSS {'\u2022'} SCSS {'\u2022'} JavaScript ES6+ {'\u2022'} ReactJS
+            </p>
+            <p className='skills-list'>
+                Rest API {'\u2022'} Netlify {'\u2022'} Canva {'\u2022'} Fauna {'\u2022'} VS Code
+            </p>
+            <p className='skills-list'>
+                Gimp {'\u2022'} React Native {'\u2022'} Fauna Query Language {'\u2022'} Git
+            </p>
             <p>
-                I've a thirst for knowledge and don't hesitate to research a topic.  It's been difficult to resist the urge to learn everything!  My current plan is to thoroughly understand a topic before adding new ones in, with an end goal of adding several more libraries and frameworks in time.  One of my favorite ways to develop skills is by finding something online that I like, and recreating it. I also achieve a thorough understanding of a topic by writing easy to understand articles and sharing them on {' '}
+                I've a thirst for knowledge and don't hesitate to research topics to better understand.  It's been difficult to resist the urge to learn everything!  One of my favorite ways to develop skills is by recreating projects I like, and then comparing the codes.  I also achieve a thorough understanding of a topic by writing easy to understand articles and sharing them on {' '}
                 <a
                     href='https://blog.achulslander.com/'
                     target='_blank'
@@ -34,12 +44,12 @@ const Skills = () => {
 
             <div className='emphasis'>
                 <p>
-                    Currently my projects are mainly developed with ReactJS. I have been expanding my skillset and have created several Jamstack web-apps using FaunaDB, Netlify and ReactJS.  I've also begun delving into React Native and am learning how to develop mobile apps. For images and icons, I primarily turn to Gimp, Canva, or use various libraries.
-                </p>
-                <p>
-                    In the past I've use Bootstrap for developing  websites, today I primarily rely on SCSS to achieve faster load times.
+                    Currently, my projects are primarily developed with <strong>ReactJS</strong>. I have been expanding my skill-set and have created several Jamstack web-apps with <strong>Fauna</strong> and <strong>Netlify</strong>.  I've also begun delving into <strong>React Native</strong> to learn how to develop mobile apps.
                 </p>
             </div>
+            <p>
+                In addition to my web development skills, I have several years of professional experience in agriculture, and have held positions in other fields.  These six years have helped me hone multiple skills, such as communication, time management, attention to detail, leadership, conflict resolution, and problem solving.
+            </p>
         </section>
     );
 };

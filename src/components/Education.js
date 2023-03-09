@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { constants } from './util/constants';
 
 const Education = () => {
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
+    const ux = constants.ux;
+    const certs = constants.certs;
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -17,49 +21,21 @@ const Education = () => {
         }
     };
 
-    const certs = [
-        {
-            url: 'https://www.freecodecamp.org/certification/achulslander/responsive-web-design',
-            name: 'Responsive Web Design'
-        },
-        {
-            url: 'https://www.freecodecamp.org/certification/achulslander/javascript-algorithms-and-data-structures',
-            name: 'JavaScript Algorithms and Database Structures'
-        },
-        {
-            url: 'https://www.freecodecamp.org/certification/achulslander/front-end-development-libraries',
-            name: 'Front End Development Libraries'
-        },
-    ];
 
-    const ux = [
-        {
-            url: 'https://coursera.org/share/38dc6c6e3a285216687e3ffa30e1afa5',
-            name: 'Foundations of User Experience (UX) Design'
-        },
-        {
-            url: 'https://coursera.org/share/7326a66d595bb3c034192847343ed5ec',
-            name: 'Start the UX Design Process: Empathize, Define, and Ideate'
-        },
-        {
-            url: 'https://coursera.org/share/661f7d7ac0a1a3a2d1b0012d91ba7561',
-            name: 'Build Wireframes and Low-Fidelity Prototypes'
-        }
-    ];
     return (
         <section ref={ref} className='education' id='education'>
-            <h3 className={onscreen ? 'edtitle scroll scrolled' : 'edtitle scroll'}>Education</h3>
+            <h2 className={onscreen ? 'edtitle scroll scrolled' : 'edtitle scroll'}>Education</h2>
             <div>
-                <h4>Degrees</h4>
+                <h3>Degrees</h3>
                 <ul className='list'>
                     <li>
-                        Bachelor of Science from Western Illinois
+                        <strong>Bachelor of Science</strong> from Western Illinois
                         University
                     </li>
-                    <li>Associate of Arts from Black Hawk College</li>
+                    <li><strong>Associate of Arts</strong> from Black Hawk College</li>
                 </ul>
-                <h4>Certifications</h4>
-                <ul className='list'>
+                <h3>Certifications</h3>
+                <ul className='list space'>
                     <li>
                         <strong>Front End Development</strong>
                     </li>
@@ -75,7 +51,7 @@ const Education = () => {
                     ))
                     }
                 </ul>
-                <ul className='list'>
+                <ul className='list space'>
                     <li><strong>UX Design</strong></li>
                     {ux.map((cert, i) => (
                         <li key={i}>
@@ -89,17 +65,17 @@ const Education = () => {
                     ))
                     }
                 </ul>
-                <h4>Currently studying</h4>
-                <ul className='list'>
+                <h3>Currently studying</h3>
+                <ul className='list sm-space'>
                     <li>
                         <a
                             href='https://www.coursera.org/professional-certificates/google-ux-design'
                             target='_blank'
                             rel='noopener noreferrer'
-                        >Create High-Fidelity Designs and Prototypes
-                            in Figma</a>
+                        >Create High-Fidelity Designs and Prototypes in Figma</a>
                     </li>
-                    <li>JavaScript and ReactJS</li>
+                    <li>React Native</li>
+                    <li>Nextjs</li>
                 </ul>
             </div>
         </section>

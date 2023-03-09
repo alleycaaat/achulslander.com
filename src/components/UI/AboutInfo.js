@@ -14,18 +14,18 @@ export const AboutInfo = () => {
             <p>
                 <span className='aheading'>Fast</span>
                 {' '}
-                A fancy website isn't helpful if slow load times cause users to click off. I'm always on the hunt for ways to trim down file sizes to shorten load times.
+                A fancy website isn't helpful if slow load times cause users to click away. I'm always on the hunt for ways to trim down file sizes to shorten load times.
             </p>
             <p>
                 <span className='aheading'>Software</span>
                 {' '}
-                My main set-up these days utilizes VSCode, Gimp, Canva and Figma. I also have experience with Adobe Photoshop, InDesign and Illustrator.
+                My main set-up these days utilizes <strong>VS Code</strong>, <strong>Gimp</strong> and <strong>Canva</strong>. I also have experience with <strong>Adobe Photoshop</strong>, <strong>InDesign</strong> and <strong>Illustrator</strong>.
             </p>
             <p>
                 <span className='aheading'>Currently</span>
                 {' '}
-                I am focusing on learning React Native to develop mobile apps, as well as the NextJS framework. I am open to freelance work or a front-end development position.
+                I am focusing on learning <strong>React Native</strong> to develop mobile apps, as well as the <strong>NextJS</strong> framework. I am open to freelance work or a front-end development position.
             </p>
         </div>
-    )
-}
+    );
+};

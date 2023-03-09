@@ -36,7 +36,7 @@ $boxshadow: 0 14px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 $cubic: cubic-bezier(0.73, 0.01, 0, 1);
 
-@keyframes hdrbtn {
+@keyframes headerbtn {
     0% {
         transform: translateY(2px);
     }
@@ -102,6 +102,21 @@ $cubic: cubic-bezier(0.73, 0.01, 0, 1);
         background-position: 0% 50%;
     }
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    ///////////////////////////////
+    /// can't have smooth scrolling and get the modal to work properly
+    //scroll-behavior: smooth;
+}
+html {
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+/********************/
+/* tooltips */
+/********************/
 [class^='tooltip'] {
     position: relative;
     &:after {
@@ -192,29 +207,24 @@ $cubic: cubic-bezier(0.73, 0.01, 0, 1);
         }
     }
 }
-:root {
-    font-size: 62.5%;
+/********************/
+/* basics */
+/********************/
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.6rem;
+    background-color: $lightBlue;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    ///////////////////////////////
-    /// can't have smooth scrolling and get the modal to work properly
-    //scroll-behavior: smooth;
-}
-html {
-    overflow-x: hidden;
+.container {
+    @include margins;
+    @include column;
+    text-align: center;
+    min-width: 100%;
 }
 .wrap {
     width: 100%;
     background-color: rgba(6, 52, 101, 0.3);
     border-radius: 5px 5px 0 0;
-}
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    font-size: 1.6rem;
-    background-color: $lightBlue;
 }
 p {
     margin: 5px 0;
@@ -238,7 +248,9 @@ p {
         color: $medGreen;
     }
 }
-
+/********************/
+/* headings */
+/********************/
 .projDesc h4 {
     background-image: linear-gradient(90deg,
             $lighterBlue 0%,
@@ -259,30 +271,23 @@ h4 {
     text-align: center;
 }
 h1 {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     margin-bottom: -11px;
 }
 h2 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     padding: 5px;
-    margin-bottom: 10px;
+    margin: 1rem 0;
+    text-transform: uppercase;
 }
 h3 {
-    font-size: 2.6rem;
-    padding: 3px 0;
+    font-size: 2.3rem;
 }
 h4 {
-    font-size: 2.2rem;
-    padding: 0 0 3px 0;
+    font-size: 1.9rem;
 }
 h5 {
     font-size: 1.28rem;
-}
-.container {
-    @include margins;
-    @include column;
-    text-align: center;
-    min-width: 100%;
 }
 .stop {
     overflow: hidden;
@@ -322,19 +327,16 @@ h5 {
 ul {
     list-style: none;
 }
-.hdrbtn {
+.headerbtn {
     display: inline-block;
     vertical-align: middle;
     animation: {
-        name: hdrbtn;
+        name: headerbtn;
         duration: 3s;
         timing-function: ease-in-out;
         iteration-count: infinite;
         fill-mode: forwards;
     }
-}
-#thanks {
-    margin: 40px 60px 60px 60px;
 }
 .returnBtn {
     width: 35px;
@@ -359,7 +361,7 @@ ul {
     width: 1px !important;
     white-space: nowrap !important;
 }
-
+/* shapes the icons and profile photo */
 .hex {
     position: absolute;
     display: inline-block;
@@ -371,17 +373,14 @@ ul {
     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
     background-color: $darkBlue;
 }
-
 .hex:first-of-type {
     animation: first-hex 3s infinite;
     background-color: $darkGreen;
 }
-
 .hex:last-of-type {
     animation: last-hex 3s infinite;
     background-color: $darkestBlue;
 }
-
 @keyframes hex {
     0% {
         opacity: 0;
@@ -396,7 +395,6 @@ ul {
         left: calc(100% + 75px);
     }
 }
-
 @keyframes first-hex {
     0% {
         opacity: 0;
@@ -411,7 +409,6 @@ ul {
         left: 100%;
     }
 }
-
 @keyframes last-hex {
     0% {
         opacity: 0;
@@ -426,7 +423,6 @@ ul {
         left: calc(100% + 150px);
     }
 }
-
 .hide {
     display: none;
 }
@@ -438,7 +434,7 @@ ul {
         transform: rotate(360deg);
     }
 }
-/* on a small screen, navigation switches to a sidebar that slides in and out on click */
+/* on a small screen, navigation switches to a sidebar that slides in and out onClick */
 .sidenavbar {
     height: auto;
     width: 0;
@@ -471,9 +467,11 @@ ul {
         margin-top: 15px;
     }
     .bottom {
+        /* add space below the last link */
         margin-bottom: 15px;
     }
 }
+/* side navigation button */
 .openbtn {
     cursor: pointer;
     color: white;
@@ -542,6 +540,7 @@ ul {
     transform: translateX(250px);
     transition: all ease 0.5s;
 }
+/* hex icons */
 .socialIcons {
     position: fixed;
     height: auto;
@@ -625,7 +624,7 @@ button.link {
 section>h3 {
     margin-top: 35px;
 }
-/* about */
+/* about section */
 .about {
     @include margins;
     padding: 15px 0;
@@ -668,7 +667,7 @@ section>h3 {
         }
     }
 }
-/* education and credit */
+/* education and credit sections */
 .credit-button {
     cursor: pointer;
     background-color: rgb(0, 0, 0, 0);
@@ -697,32 +696,38 @@ section>h3 {
     .list {
         text-align: left;
         margin-top: 7px;
-        max-width: 650px;
-        li {
+        max-width: 650px
+    }
+        .space {
+        li:not(:first-child) {
+            margin: 0 0 1.2rem 0;
             a {
                 font-size: 17px;
-                line-height: 25px;
-                margin: 1px 0 3px 0;
+                line-height: 17px;
             }
         }
     }
+        .sm-space {
+            li{
+            margin: 0 0 0.8rem 0;
+            }
+        }
     h3 {
         margin-bottom: -7px;
-    }
-    h4 {
-        margin-top: 15px;
-        margin-bottom: -7px;
         text-decoration: underline;
+        &:nth-of-type(2){
+            margin-top: 7px;
+        }
     }
     a {
         color: $darkestGreen;
     }
 }
-/* credit */
+/* credit page */
 .credit {
     margin-bottom: 100px;
 }
-/* modal */
+/* modal overlay */
 #modal-overlay {
     position: fixed;
     top: 0;
@@ -832,12 +837,30 @@ section>h3 {
         padding-right: 15px;
     }
 }
+/*skills section */
 .skills {
     @include margins;
     width: 95%;
+    flex-grow: 1;
     p {
         text-align: justify;
         padding-bottom: 5px;
+    }
+    h4 {
+        margin: 5px auto;
+        font-size: 1.8rem;
+        text-decoration: underline;
+    }
+    .skills-list {
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 0;
     }
     .mobileSkills {
         @include margins;
@@ -878,8 +901,9 @@ section>h3 {
         @include margins;
     }
     .logos {
-        padding-top: 3px;
         display: flex;
+        flex-flow: row wrap;
+        padding-top: 3px;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -1033,6 +1057,9 @@ section>h3 {
             animation-direction: normal, alternate;
         }
     }
+    p {
+    margin-bottom: 15px;
+    }
 }
 .hashnode {
     width: 100%;
@@ -1041,6 +1068,7 @@ section>h3 {
         font-weight: 500;
     }
 }
+/* hashnode posts */
 #articles {
     @include margins;
     display: flex;
@@ -1053,14 +1081,15 @@ section>h3 {
         align-items: center;
         margin: 5px auto 17px auto;
         width: auto;
-    }
+
     p {
         text-align: justify;
-        margin: 5px auto;
+        margin: 5px auto 0 auto;
     }
     h3 {
         font-size: 19px;
         line-height: 21px;
+        width: 100%;
         color: #000;
         border-bottom: 3px solid $darkBlue;
         border-top: 3px solid $darkBlue;
@@ -1078,8 +1107,10 @@ section>h3 {
     a {
         color: $darkestGreen;
         text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.4rem;
         transition: all 1s ease-out;
-        margin: 7px auto 3px auto;
+        margin: 3px auto 7px auto;
         &:hover {
             color: $darkestBlue;
             background: none;
@@ -1087,6 +1118,7 @@ section>h3 {
             text-size-adjust: 35px;
         }
     }
+}
 }
 @keyframes slideHex {
     0% {
@@ -1141,6 +1173,7 @@ section>h3 {
             color: $darkestGreen;
             font-weight: 700;
         }
+        /* styles for the image */
         .ope {
             border-radius: 5px 5px 0 0;
             opacity: 1;
@@ -1148,15 +1181,16 @@ section>h3 {
             width: 100%;
             height: auto;
             max-width: 350px;
-        }
-        .ope:hover {
-            opacity: 1;
-            transition: all ease-in 0.5s;
-        }
         &:hover {
             opacity: 1;
             transition: all ease-in 0.5s;
         }
+    }
+        &:hover {
+            opacity: 1;
+            transition: all ease-in 0.5s;
+        }
+        /* project description */
         .projDesc {
             border-radius: 25px;
             font-size: 1.6rem;
@@ -1311,7 +1345,6 @@ footer {
         }
     }
 }
-
 @keyframes from-left-slide {
     0% {
         transform: translateX(-50%);
@@ -1347,6 +1380,7 @@ footer {
         opacity: 1;
     }
 }
+/* handle the elements moving on screen */
 .scroll {
     opacity: 0;
     &.scrolled {
@@ -1400,17 +1434,16 @@ footer {
         font-size: 3.7rem;
     }
     h2 {
-        font-size: 3.4rem;
-        margin-top: -10px;
+        font-size: 3.1rem;
         padding: 5px;
         margin-bottom: 10px;
     }
     h3 {
-        font-size: 3.3rem;
+        font-size: 2.7rem;
         padding: 5px 0;
     }
     h4 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
         padding: 0 0 3px 0;
     }
     .about {
@@ -1522,13 +1555,13 @@ footer {
     .fullportfolio {
         width: 100%;
         .fullproj {
+            width: 100%;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            box-shadow: none;
             padding-bottom: 10px;
-            width: 100%;
             border-bottom: 3px solid $darkBlue;
+            box-shadow: none;
             .ope {
                 border-radius: 10px;
                 padding-bottom: 5px;
@@ -1730,7 +1763,6 @@ footer {
             margin: auto;
             width: 100%;
             flex-wrap: wrap;
-        }
         article {
             width: 30%;
             margin: 5px auto;
@@ -1739,13 +1771,11 @@ footer {
             padding: 0 5px;
             width: auto;
         }
-        a {
-            margin-top: 17px;
-        }
         img {
             width: 190px;
             height: 90px;
         }
+                }
     }
 }
 @media screen and (min-width: 766px) {

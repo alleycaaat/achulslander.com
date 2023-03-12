@@ -37,6 +37,9 @@ const Credit = ({ setShowCredit }) => {
                 <li>
                     <a target='blank' rel='noopener noreferrer' href='https://worldvectorlogo.com/logo/react-native-1'>React Native</a> icon by <a target='blank' rel='noopener noreferrer' href='https://worldvectorlogo.com/'>WorldVectorLogo</a>
                 </li>
+                <li>
+                    <a target='_blank' rel='noopener noreferrer' href='https://icons8.com/icon/30888/discord'>Discord</a> icon by <a target='_blank' rel='noopener noreferrer' href='https://icons8.com'>Icons8</a>
+                </li>
             </ul>
             <button className='credit-button' onClick={() => { setShowCredit(false); }}>Hide Credit</button>
         </section>

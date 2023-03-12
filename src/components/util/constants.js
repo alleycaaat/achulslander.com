@@ -30,28 +30,34 @@ export const constants = {
     ],
     socialIcons: [
         {
+            name: 'GitHub',
+            url: 'https://github.com/alleycaaat',
+            img: 'github_icon',
+            sr: 'External link to AC`s GitHub',
+        },
+        {
             name: 'codepen',
             url: 'https://codepen.io/alleycaaat',
             img: 'codepen_icon',
             sr: 'External link to AC`s codepen',
         },
         {
+            name: 'hashnode',
+            url: 'https://hashnode.com/@alleycaaat',
+            img: 'hashnode',
+            sr: 'External link to AC`s Hashnode',
+        },
+        {
+            name: 'Discord',
+            ulr: 'https://discordapp.com/users/427569685366833174',
+            img: 'discord',
+            sr: 'External link to AC`s Discord',
+        },
+        {
             name: 'twitter',
-            url: 'https://twitter.com/alleycaaat',
+            url: 'https://twitter.com/achulslander',
             img: 'twitter_icon',
             sr: 'External link to AC`s twitter',
-        },
-        {
-            name: 'hashnode',
-            url: 'https://blog.achulslander.com/',
-            img: 'hashnode',
-            sr: 'External link to AC`s blog',
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/alleycaaat',
-            img: 'github_icon',
-            sr: 'External link to AC`s GitHub',
         },
     ],
     modalInfo: [

@@ -68,7 +68,7 @@ export const constants = {
             desc: 'Ultra Fuel is a Jamstack web-app developed using React and SCSS to create a responsive, optimized interface.  It allows users to easily add water, Tailwind and food consumed during an ultra marathon, and displays the total calories and nutrients for each hour to quickly and easily see how the runner is fueling.  Data is retrieved with server-side functions (that serve as API endpoints), and REST API calls to the Fauna database.  Data is shared to components via the useContext Hook.',
             img: 'ultraFuel.png',
             code: 'https://github.com/alleycaaat/ultra-fuel-v2',
-            demo: 'https://achulslander-ultra-fuel-v2.netlify.app/',
+            demo: 'https://ultra-fuel.achulslander.com/',
             alt: 'Two tone grey mountains are in front of an orange gradient background.  Below that, on a light grey background, are blue buttons with white text.  The first reads `new entry`, then `notes` can be clicked.  Following that are fifteen buttons for the hours from 0700 to 2100, each can be clicked to individually show the water, food and nutrients consumed.',
         },
         {
@@ -152,7 +152,7 @@ export const constants = {
             desc: 'Ultra Fuel is a Jamstack web-app developed using React and SCSS to create a responsive, optimized interface.  It allows users to easily add water, Tailwind and food consumed during an ultra marathon, and displays the total calories and nutrients for each hour to quickly and easily see how the runner is fueling.  Data is retrieved with server-side functions (that serve as API endpoints), and REST API calls to the Fauna database.  Data is shared to components via the useContext Hook.',
             img: 'ultraFuel.png',
             code: 'https://github.com/alleycaaat/ultra-fuel-v2',
-            demo: 'https://achulslander-ultra-fuel-v2.netlify.app/',
+            demo: 'https://ultra-fuel.achulslander.com/',
             alt: 'Two tone grey mountains are in front of an orange gradient background.  Below that, on a light grey background, are blue buttons with white text.  The first reads `new entry`, then `notes` can be clicked.  Following that are fifteen buttons for the hours from 0700 to 2100, each can be clicked to individually show the water, food and nutrients consumed.',
         },
         {

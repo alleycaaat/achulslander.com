@@ -17,7 +17,7 @@ const Main = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
     const [fullPortfolioHidden, setFullPortfolioHidden] = useState(true);
-    
+
     const url = Constants.url;
 
     useEffect(() => {
@@ -95,6 +95,8 @@ const Main = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
                             <AboutInfo />
                         </div>
                     </section>
+                    <ReturnToTop />
+                    
                     <Skills id='skills' />
                     <ReturnToTop />
 

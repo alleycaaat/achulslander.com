@@ -64,7 +64,7 @@ const Education = () => {
                     ))
                     }
                 </ul>
-                <h4>Currently studying</h4>
+                <h4>Currently Learning</h4>
                 <ul className='list'>
                     <li>NextJS</li>
                     <li>React Native</li>

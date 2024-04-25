@@ -1,4 +1,4 @@
-export const constants = {
+export const Constants = {
     url: 'https://ach-photos.netlify.app/achulslander/',
     certs: [
         {

@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from 'react';
+import { Constants } from './util/Constants';
 
 const Footer = ({ section, setShowCredit }) => {
-
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
+    const icons = Constants.socialIcons;
+    const url = Constants.url;
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -27,37 +29,10 @@ const Footer = ({ section, setShowCredit }) => {
         else return;
     }, [section]);
 
-    const icons = [
-        {
-            name: 'codepen',
-            url: 'https://codepen.io/alleycaaat',
-            img: 'codepen_icon',
-            sr: 'External link to AC`s codepen',
-        },
-        {
-            name: 'twitter',
-            url: 'https://twitter.com/alleycaaat',
-            img: 'twitter_icon',
-            sr: 'External link to AC`s twitter',
-        },
-        {
-            name: 'hashnode',
-            url: 'https://blog.achulslander.com/',
-            img: 'hashnode',
-            sr: 'External link to AC`s blog',
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/alleycaaat',
-            img: 'github_icon',
-            sr: 'External link to AC`s GitHub',
-        },
-    ];
-    
     return (
         <footer>
             <section ref={ref} className='contact' id='contact'>
-                <h3 aria-label='contact'>Let&#39;s talk!</h3>
+                <h2 aria-label='contact'>Let&#39;s talk!</h2>
                 <div className='socialIconsContact'>
                     <ul>
                         {icons.map((icon, i) => (
@@ -70,7 +45,7 @@ const Footer = ({ section, setShowCredit }) => {
                                             aria-hidden='true'
                                             loading='lazy'
                                             className='icon'
-                                            src={`https://ach-photos.netlify.app/${ icon.img }.svg`}
+                                            src={`${ url }${ icon.img }.svg`}
                                             alt={`${ icon.name } logo`}
                                         />
                                         <span className='visually-hidden'>
@@ -91,7 +66,16 @@ const Footer = ({ section, setShowCredit }) => {
                     name='contactMe'
                     aria-label='Send AC a message'
                 >
-                    <input type='hidden' name='form-name' value='contactMe' />
+                    <input
+                        type='hidden'
+                        name='form-name'
+                        value='contactMe'
+                    />
+                    <input
+                        type='hidden'
+                        name='subject'
+                        value='Message from ACHulslander.com'
+                    />
                     <div className='col'>
                         <label hidden htmlFor='inputName'>Name</label>
                         <input
@@ -99,7 +83,7 @@ const Footer = ({ section, setShowCredit }) => {
                             className={onscreen ? 'form-element text scroll scrolled' : 'form-element text scroll'}
                             style={{ animationDelay: '.3s' }}
                             id='inputName'
-                            name='inputName'
+                            name='name'
                             placeholder='Name *'
                             required
                         />
@@ -110,7 +94,7 @@ const Footer = ({ section, setShowCredit }) => {
                             className={onscreen ? 'form-element text scroll scrolled' : 'form-element text scroll'}
                             style={{ animationDelay: '.6s' }}
                             id='inputEmail'
-                            name='inputEmail'
+                            name='email'
                             required
                         />
                         <label hidden htmlFor='inputMessage'>Type your message here</label>
@@ -119,7 +103,7 @@ const Footer = ({ section, setShowCredit }) => {
                             style={{ animationDelay: '.9s' }}
                             placeholder='Type your message here *'
                             id='inputMessage'
-                            name='inputMessage'
+                            name='message'
                             rows='5'
                             required
                         ></textarea>
@@ -140,6 +124,7 @@ const Footer = ({ section, setShowCredit }) => {
                         />
                     </div>
                 </form>
+                
                 <p>Content &#169; 2021 - 2024 AC Hulslander</p>
                 <p>
                     <a

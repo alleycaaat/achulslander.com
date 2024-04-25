@@ -14,7 +14,7 @@ export const AboutInfo = () => {
             <p>
                 <span className='aheading'>Fast</span>
                 {' '}
-                A fancy website isn&#39;t helpful if slow load times cause users to click off. I'm always on the hunt for ways to trim down file sizes to shorten load times.
+                A fancy website isn&#39;t helpful if slow load times cause users to click off. I&#39;m always on the hunt for ways to trim down file sizes to shorten load times.
             </p>
             <p>
                 <span className='aheading'>Software</span>

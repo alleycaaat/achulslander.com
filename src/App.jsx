@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 
-import SocialIcons from './components/UI/SocialIcons';
+import MainBody from './components/MainBody';
 import Footer from './components/Footer';
 import Nav from './components/UI/Nav';
-import MainBody from './components/MainBody';
+
+//** UI
+import SocialIcons from './components/UI/SocialIcons';
 
 function App() {
     const [stick, setStick] = useState(false);
@@ -13,6 +15,8 @@ function App() {
     const [scrolling, setScrolling] = useState();
     const [section, setSection] = useState();
 
+    //if modal is open, stop background scrolling
+    //if modal closes, don't fly back up to the top of the page
     useEffect(() => {
         if (isModalOpen) {
             let curscroll = document.documentElement.style.getPropertyValue('--scroll-y');
@@ -30,6 +34,8 @@ function App() {
     }, [isModalOpen]);
 
     const ref = useRef();
+
+    //add scroll-y value on scroll
     useEffect(() => {
         window.addEventListener('scroll', sticky);
         return () => {
@@ -43,6 +49,9 @@ function App() {
         }
     }, [showCredit]);
 
+    //set the y-scroll value, if it's greater than the inner height or modal is open,
+    //stick the nav to the top of the screen
+    //when stick is true, Nav.js adds the stick class to nav
     useEffect(() => {
         document.documentElement.style.setProperty(
             '--scroll-y',
@@ -59,6 +68,7 @@ function App() {
         setScrolling(window.scrollY);
     };
 
+    //anchor links
     const navClick = (e) => {
         e.preventDefault();
         let target = e.target.target;

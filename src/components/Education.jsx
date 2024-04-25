@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { Constants } from './util/Constants';
 
 const Education = () => {
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
+    const ux = Constants.ux;
+    const certs = Constants.certs
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -17,35 +21,6 @@ const Education = () => {
         }
     };
 
-    const certs = [
-        {
-            url: 'https://www.freecodecamp.org/certification/achulslander/responsive-web-design',
-            name: 'Responsive Web Design'
-        },
-        {
-            url: 'https://www.freecodecamp.org/certification/achulslander/javascript-algorithms-and-data-structures',
-            name: 'JavaScript Algorithms and Database Structures'
-        },
-        {
-            url: 'https://www.freecodecamp.org/certification/achulslander/front-end-development-libraries',
-            name: 'Front End Development Libraries'
-        },
-    ];
-
-    const ux = [
-        {
-            url: 'https://coursera.org/share/38dc6c6e3a285216687e3ffa30e1afa5',
-            name: 'Foundations of User Experience (UX) Design'
-        },
-        {
-            url: 'https://coursera.org/share/7326a66d595bb3c034192847343ed5ec',
-            name: 'Start the UX Design Process: Empathize, Define, and Ideate'
-        },
-        {
-            url: 'https://coursera.org/share/661f7d7ac0a1a3a2d1b0012d91ba7561',
-            name: 'Build Wireframes and Low-Fidelity Prototypes'
-        }
-    ];
     return (
         <section ref={ref} className='education' id='education'>
             <h3 className={onscreen ? 'edtitle scroll scrolled' : 'edtitle scroll'}>Education</h3>

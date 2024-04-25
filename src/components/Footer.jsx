@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from 'react';
 
 const Footer = ({ section, setShowCredit }) => {
+
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
+    
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 

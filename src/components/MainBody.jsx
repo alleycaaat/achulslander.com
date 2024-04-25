@@ -1,16 +1,19 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from 'react';
 
-import { HiChevronDoubleUp } from 'react-icons/hi';
-
-import Skills from './Skills';
+//** sections
+import FullPortfolio from './FullPortfolio';
 import Education from './Education';
 import Portfolio from './Portfolio';
-import FullPortfolio from './FullPortfolio';
+import Skills from './Skills';
 import Credit from './Credit';
+
+//**UI
+import { HiChevronDoubleUp } from 'react-icons/hi';
 import { AboutInfo } from './UI/AboutInfo';
 
 const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
+
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
     const [fullPortfolioHidden, setFullPortfolioHidden] = useState(true);
@@ -64,6 +67,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
             </button>
         );
     };
+
     return (
         <div className='column' role='main' ref={ref}>
             {showCredit ? <Credit setShowCredit={setShowCredit} />
@@ -84,7 +88,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
                                     </figcaption>
                                 </figure>
                                 <p>
-                                    I'm AC, that's Aspen in the photo with me. I've been making websites since the days of over-animated personal Geocities pages.  Nowadays, the animations I incoporate in my designs are fun accents rather than an overwhelming eyesore.  My passion and skills for web development and design have grown in leaps and bounds since my first Geocities (RIP) account was created.
+                                    I&#39;m AC, that&#39;s Aspen in the photo with me. I've been making websites since the days of over-animated personal Geocities pages.  Nowadays, the animations I incoporate in my designs are fun accents rather than an overwhelming eyesore.  My passion and skills for web development and design have grown in leaps and bounds since my first Geocities (RIP) account was created.
                                 </p>
                             </div>
                             <AboutInfo />

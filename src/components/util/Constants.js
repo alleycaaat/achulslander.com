@@ -49,7 +49,7 @@ export const Constants = {
         },
         {
             name: 'Discord',
-            ulr: 'https://discord.com/users/427569685366833174',
+            url: 'https://discord.com/users/427569685366833174',
             img: 'discord',
             sr: 'External link to AC`s Discord',
         },

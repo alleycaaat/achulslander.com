@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
-import '../style.scss';
+
+import '../styles.scss';
+
+// eslint-disable-next-line react/prop-types
 const Modal = ({ data, open, closeModal }) => {
 
     useEffect(() => {

@@ -1,35 +1,90 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect, useRef } from 'react';
+
+import SocialIcons from './components/UI/SocialIcons';
+import Footer from './components/Footer';
+import Nav from './components/UI/Nav';
+import Main from './components/Main';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [stick, setStick] = useState(false);
+    const [showCredit, setShowCredit] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [scrolling, setScrolling] = useState();
+    const [section, setSection] = useState();
+
+    useEffect(() => {
+        if (isModalOpen) {
+            let curscroll = document.documentElement.style.getPropertyValue('--scroll-y');
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${ curscroll }`;
+        }
+        if (!isModalOpen) {
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+
+            window.scrollTo(0, parseInt(scrollY) * -1);
+        }
+
+    }, [isModalOpen]);
+
+    const ref = useRef();
+    useEffect(() => {
+        window.addEventListener('scroll', sticky);
+        return () => {
+            window.removeEventListener('scroll', sticky);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (showCredit) {
+            setSection('credit');
+        }
+    }, [showCredit]);
+
+    useEffect(() => {
+        document.documentElement.style.setProperty(
+            '--scroll-y',
+            `${ window.scrollY }px`
+        );
+        if (scrolling >= window.innerHeight || isModalOpen) {
+            setStick(true);
+        } else {
+            setStick(false);
+        }
+    }, [scrolling, isModalOpen]);
+
+    const sticky = () => {
+        setScrolling(window.scrollY);
+    };
+
+    const navClick = (e) => {
+        e.preventDefault();
+        let target = e.target.target;
+        setSection(target);
+    };
+
+    return (
+        <div ref={ref} className='container'>
+            <SocialIcons />
+            <Nav
+                stick={stick}
+                navClick={navClick}
+                showCredit={showCredit}
+            />
+            <Main
+                setIsModalOpen={setIsModalOpen}
+                section={section}
+                showCredit={showCredit}
+                setShowCredit={setShowCredit}
+            />
+            <Footer
+                section={section}
+                setShowCredit={setShowCredit}
+            />
+        </div>
+    );
 }
 
-export default App
+export default App;

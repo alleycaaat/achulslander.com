@@ -9,12 +9,12 @@ export const AboutInfo = () => {
             <p>
                 <span className='aheading'>Responsive</span>
                 {' '}
-                From a large 27' monitor to a small mobile device, my layouts remain cohesive and attractive. I strive for a fluid transition as screen sizes change.
+                From a large 27&#39; monitor to a small mobile device, my layouts remain cohesive and attractive. I strive for a fluid transition as screen sizes change.
             </p>
             <p>
                 <span className='aheading'>Fast</span>
                 {' '}
-                A fancy website isn't helpful if slow load times cause users to click off. I'm always on the hunt for ways to trim down file sizes to shorten load times.
+                A fancy website isn&#39;t helpful if slow load times cause users to click off. I'm always on the hunt for ways to trim down file sizes to shorten load times.
             </p>
             <p>
                 <span className='aheading'>Software</span>

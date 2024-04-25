@@ -5,7 +5,7 @@ const Footer = ({ section, setShowCredit }) => {
 
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
-    
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -53,10 +53,11 @@ const Footer = ({ section, setShowCredit }) => {
             sr: 'External link to AC`s GitHub',
         },
     ];
+    
     return (
         <footer>
             <section ref={ref} className='contact' id='contact'>
-                <h3 aria-label='contact'>Let's talk!</h3>
+                <h3 aria-label='contact'>Let&#39;s talk!</h3>
                 <div className='socialIconsContact'>
                     <ul>
                         {icons.map((icon, i) => (
@@ -82,6 +83,7 @@ const Footer = ({ section, setShowCredit }) => {
                         ))}
                     </ul>
                 </div>
+
                 <form
                     className='contact-form'
                     method='POST'

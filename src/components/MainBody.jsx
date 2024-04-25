@@ -8,15 +8,17 @@ import Portfolio from './Portfolio';
 import Skills from './Skills';
 import Credit from './Credit';
 
-//**UI
+//** UI
 import { HiChevronDoubleUp } from 'react-icons/hi';
 import { AboutInfo } from './UI/AboutInfo';
+import { Constants } from './util/Constants';
 
-const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
-
+const Main = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
     const ref = useRef();
     const [onscreen, setonscreen] = useState(false);
     const [fullPortfolioHidden, setFullPortfolioHidden] = useState(true);
+    
+    const url = Constants.url;
 
     useEffect(() => {
         if (section !== undefined) {
@@ -30,7 +32,6 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
 
     /* ! need to alter scrollIntoView for users preferring reduced motion */
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (mediaQuery && !mediaQuery.matches) {
@@ -57,7 +58,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
         ariaHidden: 'true',
         border: '2px solid black',
         borderRadius: '50%',
-        marginTop: '15px',
+        margin: '15px auto',
     };
 
     const ReturnToTop = () => {
@@ -68,9 +69,8 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
             </button>
         );
     };
-
     return (
-        <div className='column' role='main' ref={ref}>
+        <main className='column' ref={ref}>
             {showCredit ? <Credit setShowCredit={setShowCredit} />
                 :
                 <>
@@ -79,7 +79,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
                             <div className='sec'>
                                 <figure>
                                     <img
-                                        src='https://ach-photos.netlify.app/ACHulslanderProfile.jpg'
+                                        src={`${ url }ACHulslanderProfile.jpg`}
                                         loading='lazy'
                                         alt='AC on a sunny day standing next to her horse, Aspen, giving her a kiss on the side of her muzzle'
                                         className={onscreen ? 'aspen scroll scrolled' : 'aspen scroll'}
@@ -89,7 +89,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
                                     </figcaption>
                                 </figure>
                                 <p>
-                                    I&#39;m AC, that&#39;s Aspen in the photo with me. I&#39;ve been making websites since the days of over-animated personal Geocities pages.  Nowadays, the animations I incoporate in my designs are fun accents rather than an overwhelming eyesore.  My passion and skills for web development and design have grown in leaps and bounds since my first Geocities (RIP) account was created.
+                                    I&#30;m AC, that&#39;s Aspen in the photo with me. I&#39;ve been making websites since the days of over-animated personal Geocities pages.  Nowadays, the animations I incorporate in my designs are fun accents rather than an overwhelming eyesore.  My passion and skills for web development and design have grown in leaps and bounds since my first Geocities (RIP) account was created.
                                 </p>
                             </div>
                             <AboutInfo />
@@ -107,8 +107,8 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
                     <ReturnToTop />
                 </>
             }
-        </div>
+        </main>
     );
 };
 
-export default MainBody;
+export default Main;

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { constants } from '../util/Constants';
+import { Constants } from '../util/Constants';
 
 const SkillIcons = ({ onscreen }) => {
-    const icons = constants.skillIcons;
-    const url = constants.url;
+    const icons = Constants.skillIcons;
+    const url = Constants.url;
 
     return (
         <div className='logos'>

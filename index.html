@@ -1,12 +1,186 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<link rel='preload' as='image'
+			href='https://ach-photos.netlify.app/achulslander/header-sm.png'>
+		<meta charset='UTF-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<link
+			rel='apple-touch-icon'
+			sizes='180x180'
+			href='/apple-touch-icon.png'>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='32x32'
+			href='/favicon-32x32.png'>
+		<link
+			rel='icon'
+			type='image/png'
+			sizes='16x16'
+			href='/favicon-16x16.png'>
+		<link rel='manifest' href='/manifest.json'>
+		<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5'>
+		<!-- Primary Meta Tags -->
+		<title>AC Hulslander - Front-End Developer</title>
+		<meta name='title' content='AC Hulslander - Front End Developer'>
+		<meta
+			name='description'
+			content='AC Hulslander`s personal website offers her portfolio of
+			web development projects and a list of her web design and web
+			development services for freelance work.'>
+
+		<!-- Open Graph / Facebook -->
+		<meta property='og:type' content='website'>
+		<meta property='og:url' content='https://achulslander.com/'>
+		<meta
+			property='og:title'
+			content='AC Hulslander - Front End Developer'>
+		<meta
+			property='og:description'
+			content='AC Hulslander`s personal website offers her portfolio of
+			web development projects and a list of her web design and web
+			development services for freelance work.'>
+		<meta
+			property='og:image'
+			content='https://ach-photos.netlify.app/achulslander/portfolio.png'>
+		<!-- Twitter -->
+		<meta property='twitter:card' content='summary_large_image'>
+		<meta property='twitter:url' content='https://achulslander.com/'>
+		<meta
+			property='twitter:title'
+			content='AC Hulslander - Front End Developer'>
+		<meta
+			property='twitter:description'
+			content='AC Hulslander`s personal website offers her portfolio of
+			web development projects and a list of her web design and web
+			development services for freelance work.'>
+		<meta
+			property='twitter:image'
+			content='https://ach-photos.netlify.app/achulslander/portfolio.png'>
+		<meta name='msapplication-TileColor' content='#00aba9'>
+		<meta name='theme-color' content='#ffffff'>
+		<style>
+            @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+            header {
+                height: 100vh;
+                min-width: 100%;
+                display: flex;
+                flex-direction: column;
+                background-color: #508fb9;
+                position: relative;
+                z-index: 1005;
+                background: linear-gradient(-45deg,
+                rgba(0, 134, 80, 1),
+                        rgba(13, 88, 166, 1),
+                        rgba(76, 194, 146, 1),
+                        rgba(9, 68, 128, 1),
+                        rgba(0, 174, 104, 1),
+                        rgba(48, 109, 171, 1) );
+                background-size: 400% 400%;
+                animation: gradient 13s ease infinite;
+            }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 15px;
+            }
+            .btn {
+                padding: 9px;
+                font-size: 1.5rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .headertext {
+                display: flex;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 5px;
+                padding: 5px;
+                width: auto;
+                color: #053466;
+                margin: auto;
+            }
+            .md-header,
+            .lg-header {
+                display: none;
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+			@media screen and (min-width: 285px) {
+				.headertext {
+					padding: 25px;
+				}
+			}
+        </style>
+		<!-- Google tag (gtag.js) -->
+		<script async
+			src='https://www.googletagmanager.com/gtag/js?id=G-ZN7GL1LTJ9' defer></script>
+		<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZN7GL1LTJ9');
+        </script>
+	</head>
+	<body>
+		<!-- A little help for the Netlify post-processing bots -->
+		<form name='contactMe' netlify netlify-honeypot='bot-field' hidden>
+			<input
+				type='hidden'
+				name='subject'
+				value='Message from
+				ACHulslander.com' />
+			<input type='text' name='name' />
+			<input type='email' name='email' />
+			<textarea name='message'></textarea>
+		</form>
+
+		<header class='header'>
+			<div class='headertext'><img
+					class='sm-header'
+					height='75'
+					width='250'
+					src='https://ach-photos.netlify.app/achulslander/header-sm.png'
+					alt='Hi,
+					I`m AC! Thanks for visiting. I`m a front-end web
+					developer.'>
+				<img class='md-header'
+					height='81'
+					width='297'
+					src='https://ach-photos.netlify.app/achulslander/header-md.png'
+					alt='Hi,
+					I`m AC! Thanks for visiting. I`m a front-end web
+					developer.'>
+				<img class='lg-header'
+					height='148'
+					width='496'
+					src='https://ach-photos.netlify.app/achulslander/header-lg.png'
+					alt='Hi,
+					I`m AC! Thanks for visiting. I`m a front-end web
+					developer.'>
+				<a role='button' href='#portfolio' class='btn'>
+					See what I've been making <span aria-hidden='true' class='headerbtn'>&#x21e9;</span>
+				</a>
+			</div>
+		</header>
+
+		<noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

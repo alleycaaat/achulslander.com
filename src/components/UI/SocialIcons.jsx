@@ -1,9 +1,9 @@
-import { constants } from '../util/Constants';
+import { Constants } from '../util/Constants';
 
 const SocialIcons = () => {
 
-    const icons = constants.socialIcons;
-    const url = constants.url;
+    const icons = Constants.socialIcons;
+    const url = Constants.url;
 
     return (
         <div className='socialIcons' aria-label='social media icons'>

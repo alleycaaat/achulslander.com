@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import SocialIcons from './components/UI/SocialIcons';
 import Footer from './components/Footer';
 import Nav from './components/UI/Nav';
-import Main from './components/Main';
+import MainBody from './components/MainBody';
 
 function App() {
     const [stick, setStick] = useState(false);
@@ -73,7 +73,7 @@ function App() {
                 navClick={navClick}
                 showCredit={showCredit}
             />
-            <Main
+            <MainBody
                 setIsModalOpen={setIsModalOpen}
                 section={section}
                 showCredit={showCredit}

@@ -5,7 +5,6 @@ import { HiChevronDoubleUp } from 'react-icons/hi';
 
 import Skills from './Skills';
 import Education from './Education';
-//import Articles from './Articles';
 import Portfolio from './Portfolio';
 import FullPortfolio from './FullPortfolio';
 import Credit from './Credit';

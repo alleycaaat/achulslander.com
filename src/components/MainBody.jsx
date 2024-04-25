@@ -30,6 +30,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
 
     /* ! need to alter scrollIntoView for users preferring reduced motion */
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (mediaQuery && !mediaQuery.matches) {
@@ -88,7 +89,7 @@ const MainBody = ({ setIsModalOpen, section, showCredit, setShowCredit }) => {
                                     </figcaption>
                                 </figure>
                                 <p>
-                                    I&#39;m AC, that&#39;s Aspen in the photo with me. I've been making websites since the days of over-animated personal Geocities pages.  Nowadays, the animations I incoporate in my designs are fun accents rather than an overwhelming eyesore.  My passion and skills for web development and design have grown in leaps and bounds since my first Geocities (RIP) account was created.
+                                    I&#39;m AC, that&#39;s Aspen in the photo with me. I&#39;ve been making websites since the days of over-animated personal Geocities pages.  Nowadays, the animations I incoporate in my designs are fun accents rather than an overwhelming eyesore.  My passion and skills for web development and design have grown in leaps and bounds since my first Geocities (RIP) account was created.
                                 </p>
                             </div>
                             <AboutInfo />

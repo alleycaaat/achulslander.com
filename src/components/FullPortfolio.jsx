@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Constants } from './util/Constants';
 
-// eslint-disable-next-line react/prop-types
 const FullPortfolio = ({ setFullPortfolioHidden }) => {
     const modalInfo = Constants.modalInfo;
     const url = Constants.url;
@@ -8,7 +8,7 @@ const FullPortfolio = ({ setFullPortfolioHidden }) => {
     return (
         <section className='fullportfolio' id='portfolio'>
             <h2>Project Gallery</h2>
-            
+
             <button
                 className='projBtn'
                 onClick={() => setFullPortfolioHidden(true)}

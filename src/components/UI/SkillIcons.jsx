@@ -1,42 +1,9 @@
 /* eslint-disable react/prop-types */
+import { constants } from '../util/Constants';
+
 const SkillIcons = ({ onscreen }) => {
-    const icons = [
-        {
-            name: 'HTML5',
-            url: 'html',
-            delay: '.3s',
-        },
-        {
-            name: 'CSS3',
-            url: 'css',
-            delay: '.6s',
-        },
-        {
-            name: 'Sass',
-            url: 'sass2',
-            delay: '.9s',
-        },
-        {
-            name: 'Javascript',
-            url: 'js2',
-            delay: '1.2s',
-        },
-        {
-            name: 'ReactJS',
-            url: 'react',
-            delay: '1.5s',
-        },
-        {
-            name: 'Bootstrap',
-            url: 'bootstrap2',
-            delay: '1.8s',
-        },
-        {
-            name: 'React Native',
-            url: 'react-native',
-            delay: '2.1s'
-        }
-    ];
+    const icons = constants.skillIcons;
+    const url = constants.url;
 
     return (
         <div className='logos'>
@@ -49,7 +16,7 @@ const SkillIcons = ({ onscreen }) => {
                 >
                     <div className='hex-shape' style={{ animationDelay: icon.delay }}>
                         <img
-                            src={`https://ach-photos.netlify.app/${ icon.url }.svg`}
+                            src={`${ url }${ icon.url }.svg`}
                             alt={`${ icon.name } icon`}
                             aria-hidden='true'
                             className='icon'

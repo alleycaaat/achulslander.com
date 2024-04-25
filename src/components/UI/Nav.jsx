@@ -33,13 +33,13 @@ const Nav = ({ stick, navClick, showCredit }) => {
                             aria-expanded={clicked}
                             className='openbtn nav-shut'
                             id='openBtn'
-                            aria-label='menu'
+                            aria-label='navigation menu'
                             onClick={() => setClicked(!clicked)}
                             style={{ width: rotated }}
                         >
                             <span
                                 role='img'
-                                aria-label='horizontal double chevron'
+                                aria-hidden='true'
                                 id='sidebarBtn'
                                 style={{ transform: rotate }}
                             >&raquo;</span>

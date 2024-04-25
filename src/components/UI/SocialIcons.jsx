@@ -1,31 +1,9 @@
+import { constants } from '../util/Constants';
+
 const SocialIcons = () => {
 
-    const icons = [
-        {
-            name: 'codepen',
-            url: 'https://codepen.io/alleycaaat',
-            img: 'codepen_icon',
-            sr: 'External link to AC`s codepen',
-        },
-        {
-            name: 'twitter',
-            url: 'https://twitter.com/alleycaaat',
-            img: 'twitter_icon',
-            sr: 'External link to AC`s twitter',
-        },
-        {
-            name: 'hashnode',
-            url: 'https://blog.achulslander.com/',
-            img: 'hashnode',
-            sr: 'External link to AC`s blog',
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/alleycaaat',
-            img: 'github_icon',
-            sr: 'External link to AC`s GitHub',
-        },
-    ];
+    const icons = constants.socialIcons;
+    const url = constants.url;
 
     return (
         <div className='socialIcons' aria-label='social media icons'>
@@ -40,7 +18,7 @@ const SocialIcons = () => {
                                     aria-hidden='true'
                                     loading='lazy'
                                     className='icon'
-                                    src={`https://ach-photos.netlify.app/${ icon.img }.svg`}
+                                    src={`${ url }${ icon.img }.svg`}
                                     alt={`${ icon.name } logo`}
                                 />
                                 <span className='visually-hidden'>

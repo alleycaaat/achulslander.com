@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from 'react';
 
+import { Constants } from './util/Constants';
+
 import '../styles.scss';
 
 const Modal = ({ data, open, closeModal }) => {
-
+    const url = Constants.url;
+    
     useEffect(() => {
         const closeOnEscapeKey = e => e.key === 'Escape' ? closeModal() : null;
         document.body.addEventListener('keydown', closeOnEscapeKey);
@@ -15,10 +18,10 @@ const Modal = ({ data, open, closeModal }) => {
 
     if (!open) return null;
 
-
     const close = () => {
         closeModal();
     };
+
     return (
         <div id='modal-overlay'>
             <div
@@ -30,7 +33,7 @@ const Modal = ({ data, open, closeModal }) => {
                     &times;
                 </button>
                 <div className='modalcontent'>
-                    <img className='image' src={`https://ach-photos.netlify.app/${ data.img }`} alt={data.alt} />
+                    <img className='image' src={`${ url }${ data.img }`} alt={data.alt} />
                     <p className='title'>{data.title}</p>
                     <p className='description'>{data.desc}</p>
                     <a

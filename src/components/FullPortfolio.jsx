@@ -105,7 +105,7 @@ const FullPortfolio = ({ setFullPortfolioHidden }) => {
                             className='ope'
                             loading='lazy'
                             decoding='async'
-                            src={`https://ach-photos.netlify.app${ proj.img }`}
+                            src={`https://ach-photos.netlify.app/achulslander${ proj.img }`}
                             alt={proj.alt}
                         />
                         <div className='projDesc'>

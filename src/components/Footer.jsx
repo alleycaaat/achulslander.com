@@ -71,7 +71,7 @@ const Footer = ({ section, setShowCredit }) => {
                                             aria-hidden='true'
                                             loading='lazy'
                                             className='icon'
-                                            src={`https://ach-photos.netlify.app/${ icon.img }.svg`}
+                                            src={`https://ach-photos.netlify.app/achulslander/${ icon.img }.svg`}
                                             alt={`${ icon.name } logo`}
                                         />
                                         <span className='visually-hidden'>
